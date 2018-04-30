@@ -1,0 +1,10 @@
+{% for article in dates %}
+  <div class="card mb-4">
+    <a class="url fn" href="{{ SITEURL }}/{{ article.url }}">
+      {{ article.title }}
+    </a>
+    <time class="published" datetime="{{ article.date.isoformat() }}">
+      {{ article.locale_date }}
+    </time>
+  </div>
+{% endfor %}

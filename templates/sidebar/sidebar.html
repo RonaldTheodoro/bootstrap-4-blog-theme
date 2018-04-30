@@ -1,0 +1,36 @@
+<div class="col-md-4 social">
+  <div class="card my-4">
+    <h3 class="card-header">{{ SOCIAL_WIDGET_NAME | default('Social') }}</h3>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-12">
+          {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+            <ul class="list-unstyled mb-0">
+              {% for name, link in SOCIAL %}
+                <li><a href="{{ link }}">{{ name }}</a></li>
+              {% endfor %}
+              
+              {% if FEED_ALL_ATOM %}
+                <li>
+                  <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml"
+                    rel="alternate">
+                    atom feed
+                  </a>
+                </li>
+              {% endif %}
+              
+              {% if FEED_ALL_RSS %}
+                <li>
+                  <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml"
+                    rel="alternate">
+                    rss feed
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

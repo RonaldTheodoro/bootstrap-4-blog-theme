@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block head %}
+  {{ super() }}
+  
+  {% if article.description %}
+    <meta name="description" content="{{ article.description }}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{ tag }}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block title %}{{ SITENAME }} - {{ article.title }}{% endblock %}
+
+{% block content %}
+  <h1 class="my-4">
+    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+      title="Permalink to {{ article.title|striptags }}">
+      {{ article.title }}
+    </a>
+  </h1>
+
+  <p>
+    {% if article.authors %}
+      By {% for author in article.authors %}
+        <a href="{{ SITEURL }}/{{ author.url }}">{{ author }} </a>
+      {% endfor %}
+    {% endif %}
+  </p>
+
+  <hr/>
+
+  <time datetime="{{ article.date.isoformat() }}">
+    {% if article.modified %}
+      Updated: {{ article.locale_modified }}
+    {% else %}
+      Published: {{ article.locale_date }}
+    {% endif %}
+  </time>
+
+  <hr/>
+
+  <div>
+    {{ article.content }}
+  </div>
+
+  <div class="card-footer text-muted">
+    <p>
+      In <a href="{{ SITEURL }}/{{ article.category.url }}">
+        {{ article.category }}
+      </a>
+    </p>
+    {% include "taglist.html" %}
+  </div>
+{% endblock %}
