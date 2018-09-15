@@ -6,34 +6,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        {% for title, link in MENUITEMS %}
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ link }}">{{ title }}</a>
-          </li>
-        {% endfor %}
-
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for page in pages %}
-            <li class="nav-item active">
-              <a class="nav-link" href="/{{ page.url }}">
-                {{ page.title }}
-              </a>
-            </li>
-          {% endfor %}
-        {% else %}
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-            {% for category, null in categories %}
-              <li class="nav-item active">
-                <a class="nav-link" href="/{{ category.url }}">
-                  {{ category }}
-                </a>
-              </li>
-            {% endfor %}
-          {% endif %}
-        {% endif %}
-      </ul>
-    </div>
+    <div class="collapse navbar-collapse" id="navbarResponsive"></div>
   </div>
 </nav>
+
