@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% from 'macros/list_items_page.html' import list_items_page %}
+
 {% block title %}{{ SITENAME }} - Categories{% endblock %}
 
 {% block content %}
@@ -7,9 +9,5 @@
     <h1 class="my-4">Categories</h1>
   {% endblock %}
 
-  <ul>
-    {% for category, articles in categories %}
-      <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-    {% endfor %}
-  </ul>
+  {{ list_items_page(categories) }}
 {% endblock %}

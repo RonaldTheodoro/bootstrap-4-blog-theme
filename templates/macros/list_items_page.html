@@ -1,0 +1,9 @@
+{% macro list_items_page(items) %}
+  <ul>
+    {% for item, articles in items %}
+      <li>
+        <a href="/{{ item.url }}">{{ item }}</a> ({{ articles|count }})
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

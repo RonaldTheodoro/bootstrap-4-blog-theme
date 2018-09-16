@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 
+{% from 'macros/list_items_page.html' import list_items_page %}
+
 {% block title %}{{ SITENAME }} - Tags{% endblock %}
 
 {% block content %}
   {% block content_title %}
     <h1 class="my-4">Tags</h1>
   {% endblock %}
-  <ul>
-    {% for tag, articles in tags|sort %}
-      <li>
-        <a href="{{ SITEURL }}/{{ tag.url }}">
-          {{ tag }}
-        </a>({{ articles|count }})
-      </li>
-    {% endfor %}
-  </ul>
+
+  {{ list_items_page(tags) }}
 {% endblock %}
