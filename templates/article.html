@@ -2,7 +2,7 @@
 
 {% block head %}
   {{ super() }}
-  
+
   {% if article.description %}
     <meta name="description" content="{{ article.description }}" />
   {% endif %}
@@ -55,4 +55,15 @@
     </p>
     {% include "taglist.html" %}
   </div>
+  {% if article.related_posts %}
+    <ul>
+      {% for related_post in article.related_posts %}
+        <li>
+          <a href="{{ SITEURL }}/{{ related_post.url }}">
+            {{ related_post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 {% endblock %}
