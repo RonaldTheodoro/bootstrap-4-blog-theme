@@ -1,9 +1,11 @@
-<div class="col-md-4 social">
+{% from 'macros/card_box.html' import card_box %}
+
+<div class="col-4 social">
   <div class="card my-4">
     <h3 class="card-header">{{ SOCIAL_WIDGET_NAME | default('Social') }}</h3>
     <div class="card-body">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-auto">
           {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
             <ul class="list-unstyled mb-0">
               {% for name, link in SOCIAL %}
@@ -34,19 +36,9 @@
     </div>
   </div>
   {% if DISPLAY_CATEGORIES_ON_MENU %}
-    <div class="card my-4">
-      <h3 class="card-header">Categories</h3>
-      <ul class="list-unstyled mb-0">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-12">
-              {% for name, links in categories %}
-                <li><a href="/category/{{ name.slug }}">{{ name }}</a></li>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </ul>
-    </div>
+    {{ card_box('Categories', categories, '/category/') }}
+  {% endif %}
+  {% if DISPLAY_TAGS_ON_SIDEBAR %}
+    {{ card_box('Tags', tags, '/tag/') }}
   {% endif %}
 </div>
