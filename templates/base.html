@@ -48,7 +48,9 @@
         {% block content %}
         {% endblock %}
       </div>
-      {% include "sidebar/sidebar.html" %}
+      {% if DISPLAY_SIDEBAR %}
+        {% include "sidebar/sidebar.html" %}
+      {% endif %}
     </div>
   </div>
   <script src="{{ SITEURL }}/theme/js/bootstrap.js"></script>
