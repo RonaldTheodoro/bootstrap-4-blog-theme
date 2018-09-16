@@ -87,3 +87,7 @@ body {
 .social a[href*='youtube.com'] {
   background-image: url('../icons/youtube.png');
 }
+
+* {
+  font-family: "HelveticaNeue-CondensedBold","Helvetica Neue CE 600 Condensed","Helvetica Neue LT Condensed","Helvetica Neue 600 Condensed","HelveticaNeue-BoldCondensed","Helvetica Neue BoldCondensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
