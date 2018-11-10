@@ -1,12 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      {{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <span class="navbar-text">
+      <a href="/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a>
+    </span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive"></div>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="/categories" class="nav-link">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a href="/tags" class="nav-link">Tags</a>
+        </li>
+        <li class="nav-item">
+          <a href="/archives" class="nav-link">Archives</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
-
