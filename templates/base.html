@@ -36,8 +36,10 @@
       <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL|format(tag.slug) }}{% else %}{{ TAG_FEED_RSS|format(tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
   {% endblock head %}
-  <link href="{{ SITEURL }}/theme/css/bootstrap.css" rel="stylesheet">
-  <link href="{{ SITEURL }}/theme/css/main.css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/lato.css" type="text/css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/bootstrap.css" type="text/css" rel="stylesheet">
+  <link href="{{ SITEURL }}/theme/css/main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
   {% include 'navbar/navbar.html' %}
