@@ -35,6 +35,12 @@
     {% if TAG_FEED_RSS and tag %}
       <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL|format(tag.slug) }}{% else %}{{ TAG_FEED_RSS|format(tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
     {% endif %}
+
+    {% if META_TAGS %}
+      {% for tag in META_TAGS %}
+        <meta name="{{ tag['name'] }}" content="{{ tag['content'] }}">
+      {% endfor %}
+    {% endif %}
   {% endblock head %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,300,700" type="text/css">
