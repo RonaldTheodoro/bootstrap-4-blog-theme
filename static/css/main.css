@@ -2,6 +2,20 @@
   font-family: 'Lato', sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  flex: 1 0 auto;
+}
+
 .social-icons {
   font-size: 2em;
   text-align: center;

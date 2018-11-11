@@ -1,19 +1,19 @@
-<footer class="bg-dark">
-    <div class="container social-icons">
-        {% for name, link in SOCIAL %}
-            <a href="{{ link }}">
-                <i class="fa fa-{{ name }}"></i>
-            </a>
-        {% endfor %}
-        {% if FEED_ALL_ATOM %}
-            <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">
-                <i class="fa fa-feed"></i>
-            </a>
-        {% endif %}
-        {% if FEED_ALL_RSS %}
-            <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-            </a>
-        {% endif %}
-    </div>
-</footer>
+
+<div class="container social-icons">
+    {% for name, link in SOCIAL %}
+        <a href="{{ link }}">
+            <i class="fa fa-{{ name }}"></i>
+        </a>
+    {% endfor %}
+    {% if FEED_ALL_ATOM %}
+        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate">
+            <i class="fa fa-feed"></i>
+        </a>
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate">
+            <i class="fa fa-rss"></i>
+        </a>
+    {% endif %}
+</div>
+<p class="m-0 text-center text-white">Copyright © Ronald Theodoro 2018</p>
