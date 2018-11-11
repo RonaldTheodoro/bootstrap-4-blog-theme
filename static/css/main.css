@@ -12,6 +12,10 @@ body {
   flex-direction: column;
 }
 
+.site-name {
+  font-size: 1.5em;
+}
+
 .box {
   flex: 1 0 auto;
 }
